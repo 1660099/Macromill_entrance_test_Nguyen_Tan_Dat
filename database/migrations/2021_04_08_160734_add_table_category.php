@@ -17,7 +17,7 @@ class AddTableCategory extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('short_description')->nullable();
-            $table->text('image_name')->nullable();
+            $table->integer('sub_id')->nullable();
             $table->timestamps();
         });
     }

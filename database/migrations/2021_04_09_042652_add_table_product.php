@@ -17,7 +17,6 @@ class AddTableProduct extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('short_description')->nullable();
-            $table->text('image_name')->nullable();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('subcategories_id')->nullable();

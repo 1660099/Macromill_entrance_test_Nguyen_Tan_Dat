@@ -24,3 +24,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', function () {
     return view('page.admin_template');
 });
+
+Route::group(['prefix' => 'category'], function () {
+    Route::get('/', 'CategoryController@index')->name('category');
+    Route::get('/create', 'CategoryController@create')->name('category.create');
+    Route::post('/store', 'CategoryController@store')->name('category.store');
+});
+
+Route::group(['prefix' => 'product'], function () {
+    Route::get('/', 'ProductController@index')->name('product');
+    Route::get('/create', 'ProductController@create')->name('product.create');
+    Route::post('/store', 'ProductController@store')->name('product.store');
+});
+
+
